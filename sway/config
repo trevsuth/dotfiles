@@ -8,10 +8,16 @@
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 
+# Shared paths
+set $scripts $HOME/.config/sway/scripts
+set $screenshot $scripts/screen.sh
+set $volume_script $scripts/volume
+set $cwd_script $scripts/cwd-term.sh
+
 ### Notification Service
 exec mako
 
-# Import theme first so invidual modifications can be made
+# Import theme first so individual modifications can be made
 include ~/.config/sway/themes/expanse_hud
 
 ### Clipman
@@ -38,7 +44,7 @@ set $qterm alacritty -t "Floating Terminal"
 bindsym $mod+Shift+Return exec $qterm
 
 # Current Working Dir terminal [ MOD + Control + Return ]
-bindsym $mod+Control+Return exec alacritty --working-directory $(/home/arran/.config/sway/scripts/cwd-term.sh)
+bindsym $mod+Control+Return exec alacritty --working-directory "$($cwd_script)"
 
 ### Application Launcher
 
@@ -59,7 +65,7 @@ exec swayidle -w \
               resume 'swaymsg "output * dpms on"' \
          before-sleep 'swaylock -f -c 000000'
 
-# Dont idle on windows that are full screen
+# Don't idle on windows that are full screen
 for_window [class="^.*"] inhibit_idle fullscreen
 for_window [app_id="^.*"] inhibit_idle full
 
@@ -67,9 +73,9 @@ for_window [app_id="^.*"] inhibit_idle full
 # ----------
 for_window [app_id="zenity" title="screenshot"] floating enable
 # Entire screen + menu
-bindsym print exec ~/.config/sway/scripts/screen.sh
+bindsym print exec $screenshot
 # Screen region + menu
-bindsym Shift+print exec ~/.config/sway/scripts/screen.sh -s
+bindsym Shift+print exec $screenshot -s
 
 
 ### System Menu
@@ -86,16 +92,11 @@ set $lock       swaylock --ignore-empty-password \
                 --ring-clear-color 98971a \
                 --line-ver-color ebdbb2 \
                 --line-uses-ring \
-
-
- 
-
 # Lock to black, stop sending output to monitor.
 set $locksoff   swayidle -w  \
                 timeout 1 'swaylock -e -f -c 1d2021 -t' \
                 timeout 2 'swaymsg "output * dpms off"' \
                 resume 'swaymsg "output * dpms on"; pkill -nx swayidle'
- 
 set $Pause  [L]ock, loc[K]toblack, [E]xit, [S]uspend, [R]eboot, [END] Shutdown
 mode "$Pause" {
     bindsym e       exec --no-startup-id $wmexit,               mode "default"
@@ -104,16 +105,12 @@ mode "$Pause" {
     bindsym End     exec --no-startup-id systemctl poweroff -i, mode "default"
     bindsym l       exec --no-startup-id $lock,                 mode "default"
     bindsym k       exec --no-startup-id $locksoff,             mode "default"
- 
     bindsym Return  mode "default"
     bindsym Escape  mode "default"
 }
-bindsym $mod+x mode "$Pause" 
+bindsym $mod+x mode "$Pause"
 
 ## Volume control
-
-# Path to volume control, without trailing slash
-set $volumepath $HOME/.config/sway/scripts/volume
 
 # Command for the status line
 #   ie: i3blocks, i3status
@@ -139,9 +136,9 @@ set $notify_expire 500
 
 # Using pulseaudio-utils (append "-s $sinkname" without quotes to override default sink)
 
-bindsym --locked XF86AudioRaiseVolume exec $volumepath -np -e $notify_expire -i $volumestep -t $statuscmd -u $statussig
-bindsym --locked XF86AudioLowerVolume exec $volumepath -np -e $notify_expire -d $volumestep -t $statuscmd -u $statussig 
-bindsym --locked XF86AudioMute        exec $volumepath -mn -e $notify_expire -t $statuscmd -u $statussig 
+bindsym --locked XF86AudioRaiseVolume exec $volume_script -np -e $notify_expire -i $volumestep -t $statuscmd -u $statussig
+bindsym --locked XF86AudioLowerVolume exec $volume_script -np -e $notify_expire -d $volumestep -t $statuscmd -u $statussig
+bindsym --locked XF86AudioMute        exec $volume_script -mn -e $notify_expire -t $statuscmd -u $statussig
 
 ### Multimedia Input Bindings
 

@@ -17,6 +17,9 @@ set $cwd_script $scripts/cwd-term.sh
 ### Notification Service
 exec mako
 
+# Ensure only one Waybar instance (systemd user services sometimes auto-start it)
+exec_always --no-startup-id pkill -x waybar || true
+
 # Import theme first so individual modifications can be made
 include ~/.config/sway/themes/expanse_hud
 

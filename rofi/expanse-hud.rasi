@@ -1,0 +1,76 @@
+/* Expanse HUD theme for rofi (dmenu-style layout) */
+
+configuration {
+  show-icons: false;
+  display-drun: "RUN";
+  font: "IBM Plex Mono 14";
+}
+
+* {
+  bg:  #0a1620;
+  panel: #0d1f2d;
+  grid: #133040;
+  text: #e4f1f9;
+  muted: #6c7b86;
+  cyan: #4ff3ff;
+  amber: #ffb25a;
+  danger: #f35e5e;
+}
+
+window {
+  background-color: @panel;
+  border: 2px solid @cyan;
+  padding: 12px;
+}
+
+mainbox {
+  spacing: 8px;
+}
+
+inputbar {
+  background-color: @bg;
+  border: 1px solid @grid;
+  padding: 8px 10px;
+  margin: 0 0 6px 0;
+  text-color: @text;
+}
+
+prompt {
+  text-color: @amber;
+}
+
+entry {
+  text-color: @text;
+  cursor: text;
+}
+
+listview {
+  background-color: transparent;
+  columns: 1;
+  spacing: 4px;
+}
+
+element {
+  padding: 6px 10px;
+  text-color: @muted;
+  background-color: transparent;
+}
+
+element selected {
+  text-color: @bg;
+  background-color: @cyan;
+  border: 1px solid @amber;
+}
+
+element urgent {
+  text-color: @danger;
+}
+
+element active {
+  text-color: @amber;
+}
+
+message {
+  padding: 6px 10px;
+  text-color: @amber;
+}

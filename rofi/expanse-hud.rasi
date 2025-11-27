@@ -19,7 +19,8 @@ configuration {
 
 window {
   background-color: @panel;
-  border: 2px solid @cyan;
+  border: 2px;
+  border-color: @cyan;
   padding: 12px;
 }
 
@@ -29,7 +30,8 @@ mainbox {
 
 inputbar {
   background-color: @bg;
-  border: 1px solid @grid;
+  border: 1px;
+  border-color: @grid;
   padding: 8px 10px;
   margin: 0 0 6px 0;
   text-color: @text;
@@ -59,7 +61,8 @@ element {
 element selected {
   text-color: @bg;
   background-color: @cyan;
-  border: 1px solid @amber;
+  border: 1px;
+  border-color: @amber;
 }
 
 element urgent {

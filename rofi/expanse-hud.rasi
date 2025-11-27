@@ -15,10 +15,11 @@ configuration {
   cyan: #4ff3ff;
   amber: #ffb25a;
   danger: #f35e5e;
+  background-color: transparent;
 }
 
 window {
-  background-color: @panel;
+  background-color: @bg;
   border: 2px;
   border-color: @cyan;
   padding: 12px;
@@ -26,6 +27,7 @@ window {
 
 mainbox {
   spacing: 8px;
+  background-color: @panel;
 }
 
 inputbar {
@@ -55,7 +57,7 @@ listview {
 element {
   padding: 6px 10px;
   text-color: @muted;
-  background-color: transparent;
+  background-color: @panel;
 }
 
 element selected {

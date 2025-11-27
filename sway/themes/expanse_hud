@@ -1,0 +1,48 @@
+# Expanse-inspired HUD theme (palette pulled from show UI: deep navy, cyan, amber accents)
+
+# Background / base
+set $bg         #0a1620
+set $panel      #0d1f2d
+set $grid       #133040
+
+# Text & accents
+set $text       #e4f1f9
+set $muted      #6c7b86
+set $cyan       #4ff3ff
+set $teal       #2eb5d8
+set $amber      #ffb25a
+set $danger     #f35e5e
+
+# Client states
+set $focused_bgcolor   $panel
+set $focused_textcolor $cyan
+set $focused_indicator $cyan
+
+set $inactive_bgcolor  $bg
+set $inactive_textcolor $muted
+set $inactive_indicator $grid
+
+set $unfocused_bgcolor $bg
+set $unfocused_textcolor $muted
+set $unfocused_indicator $grid
+
+set $urgent_bgcolor    $danger
+set $urgent_textcolor  $text
+set $urgent_indicator  $amber
+
+# Appearance
+default_border pixel 3
+default_floating_border pixel 6
+gaps inner 8
+gaps outer 6
+smart_gaps on
+smart_borders on
+hide_edge_borders smart
+
+# Titlebars off and light opacity hint
+for_window [app_id="^.*"] border pixel 3, opacity 0.96
+
+client.focused          $focused_bgcolor $focused_bgcolor $focused_textcolor $focused_indicator $focused_bgcolor
+client.focused_inactive $inactive_bgcolor $inactive_bgcolor $inactive_textcolor $inactive_indicator $inactive_bgcolor
+client.unfocused        $unfocused_bgcolor $unfocused_bgcolor $unfocused_textcolor $unfocused_indicator $unfocused_bgcolor
+client.urgent           $urgent_bgcolor $urgent_bgcolor $urgent_textcolor $urgent_indicator $urgent_bgcolor

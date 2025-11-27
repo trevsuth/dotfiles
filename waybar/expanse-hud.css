@@ -1,0 +1,96 @@
+/* Expanse-inspired HUD: thin lines, cyan/amber accents, dark navy base */
+
+@define-color bg        #0a1620;
+@define-color panel     #0d1f2d;
+@define-color grid      #133040;
+@define-color text      #e4f1f9;
+@define-color muted     #6c7b86;
+@define-color cyan      #4ff3ff;
+@define-color teal      #2eb5d8;
+@define-color amber     #ffb25a;
+@define-color danger    #f35e5e;
+
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "IBM Plex Mono", "JetBrains Mono", monospace;
+  font-size: 14px;
+  color: @text;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+window#waybar {
+  background: linear-gradient(180deg, @panel 0%, @bg 100%);
+  border-bottom: 2px solid @cyan;
+  box-shadow: inset 0 -2px 0 0 @grid, 0 6px 12px rgba(0, 0, 0, 0.35);
+}
+
+#workspaces button {
+  padding: 4px 10px;
+  margin: 0 2px;
+  background: transparent;
+  color: @muted;
+  border-bottom: 2px solid transparent;
+}
+
+#workspaces button.focused {
+  color: @cyan;
+  border-bottom-color: @cyan;
+  box-shadow: inset 0 -2px 0 @cyan;
+}
+
+#workspaces button.urgent {
+  color: @danger;
+  border-bottom-color: @amber;
+}
+
+#mode {
+  background: rgba(19, 48, 64, 0.75);
+  color: @amber;
+  padding: 4px 10px;
+  border-bottom: 2px solid @amber;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#tray,
+#idle_inhibitor,
+#custom-music {
+  padding: 4px 10px;
+  margin: 0 6px;
+  background: rgba(13, 31, 45, 0.75);
+  border: 1px solid @grid;
+  box-shadow: inset 0 -2px 0 0 @grid;
+}
+
+#clock {
+  color: @bg;
+  background: @cyan;
+  border-color: @cyan;
+  box-shadow: inset 0 -2px 0 0 @amber;
+  font-weight: 700;
+}
+
+#network.disconnected,
+#pulseaudio.muted {
+  color: @danger;
+  border-color: @danger;
+  box-shadow: inset 0 -2px 0 0 @danger;
+}
+
+#idle_inhibitor.activated {
+  color: @bg;
+  background: @amber;
+  border-color: @amber;
+}
+
+#custom-music {
+  border-color: @amber;
+  color: @amber;
+  box-shadow: inset 0 -2px 0 0 @amber;
+}

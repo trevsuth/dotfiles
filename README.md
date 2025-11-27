@@ -26,6 +26,10 @@ The script links each item into `~/.config/...` (and `.bashrc` into `$HOME`). If
 - Ubuntu: `install/install-ubuntu.sh` (WezTerm requires the upstream repo; see script note.)
 - macOS: `install/install-macos.sh` (skips Sway/Waybar; installs terminal tools and shells)
 
+## Themes
+- Sway: themes live in `sway/themes/`. To try the Expanse HUD variant, set `include ~/.config/sway/themes/expanse_hud` near the top of `sway/config`.
+- Waybar: point `style.css` to the theme you want, e.g. `ln -sf expanse-hud.css ~/.config/waybar/style.css`.
+
 ## Adding/Updating Configs
 1) Place the config inside this repo following the XDG-ish layout (e.g., add `kitty` as `kitty/` for `~/.config/kitty`).
 2) Run `install/bootstrap.sh` to refresh symlinks and back up any live files.

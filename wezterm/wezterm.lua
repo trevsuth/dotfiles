@@ -172,7 +172,7 @@ return {
 			}
 		end)(),
 	},
-	hide_tab_bar_if_only_one_tab = true,
+	hide_tab_bar_if_only_one_tab = false,
 	use_fancy_tab_bar = true,
 	tab_bar_style = {
 		active_tab_left = wezterm.format({ { Foreground = { Color = palette.cyan } }, { Text = "" } }),

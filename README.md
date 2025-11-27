@@ -26,6 +26,13 @@ The script links each item into `~/.config/...` (and `.bashrc` into `$HOME`). If
 - Ubuntu: `install/install-ubuntu.sh` (WezTerm requires the upstream repo; see script note.)
 - macOS: `install/install-macos.sh` (skips Sway/Waybar; installs terminal tools and shells)
 
+### Sway helper dependencies
+Install these with your package manager so sway keybinds don’t break:
+- `grim`, `slurp`, `wl-clipboard` (screenshots + clipboard copy)
+- `mako`, `swayidle`, `swaylock` (notifications/lock/idle)
+- `playerctl` (media keys)
+- `pactl` via PipeWire/PulseAudio (`pipewire-pulse` or `pulseaudio-utils`) for volume control
+
 ## Themes
 - Sway: themes live in `sway/themes/`. To try the Expanse HUD variant, set `include ~/.config/sway/themes/expanse_hud` near the top of `sway/config`.
 - Waybar: point `style.css` to the theme you want, e.g. `ln -sf expanse-hud.css ~/.config/waybar/style.css`.

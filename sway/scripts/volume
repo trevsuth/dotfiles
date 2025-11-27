@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+# Minimal PulseAudio/pipewire volume helper compatible with sway keybinds.
+set -euo pipefail
+
+inc=0
+dec=0
+mute=false
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -i|--inc) inc="${2:-0}"; shift ;;
+    -d|--dec) dec="${2:-0}"; shift ;;
+    -m|-mn|--mute) mute=true ;;
+    *) ;; # ignore other flags used by the old script (-n, -p, -e, -t, -u)
+  esac
+  shift || true
+done
+
+if ! command -v pactl >/dev/null 2>&1; then
+  echo "volume: pactl not found" >&2
+  exit 1
+fi
+
+sink="@DEFAULT_SINK@"
+
+if [[ "$inc" != "0" ]]; then
+  pactl set-sink-volume "$sink" +"${inc}%"
+fi
+
+if [[ "$dec" != "0" ]]; then
+  pactl set-sink-volume "$sink" -"${dec}%"
+fi
+
+if $mute; then
+  pactl set-sink-mute "$sink" toggle
+fi
+
+if command -v notify-send >/dev/null 2>&1; then
+  vol_readback=$(pactl get-sink-volume "$sink" | head -n1 | awk '{print $5}')
+  mute_state=$(pactl get-sink-mute "$sink" | awk '{print $2}')
+  notify-send "Volume" "${vol_readback:-updated} (mute: ${mute_state:-unknown})"
+fi

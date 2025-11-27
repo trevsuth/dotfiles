@@ -1,0 +1,55 @@
+# Expanse HUD palette shared with waybar/expanse-hud.css
+palette = "expanse_hud"
+add_newline = false
+format = "$all"
+
+[palettes.expanse_hud]
+bg = "#0a1620"
+panel = "#0d1f2d"
+grid = "#133040"
+text = "#e4f1f9"
+muted = "#6c7b86"
+cyan = "#4ff3ff"
+teal = "#2eb5d8"
+amber = "#ffb25a"
+danger = "#f35e5e"
+violet = "#9ad1ff"
+
+[character]
+success_symbol = "[❯](fg:cyan)"
+error_symbol = "[❯](fg:danger)"
+vicmd_symbol = "[❮](fg:amber)"
+
+[directory]
+style = "fg:cyan"
+read_only = " "
+read_only_style = "fg:amber"
+truncation_length = 4
+
+[git_branch]
+style = "fg:amber"
+symbol = " "
+
+[git_status]
+style = "fg:danger"
+conflicted = "[~](fg:danger)"
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕${ahead_count}/${behind_count}"
+
+[cmd_duration]
+style = "fg:teal"
+min_time = 750
+
+[time]
+disabled = false
+style = "fg:muted"
+format = " [$time]($style)"
+
+[status]
+style = "fg:danger"
+symbol = "✖ "
+format = "[$symbol$status]($style) "
+
+[battery]
+disabled = true

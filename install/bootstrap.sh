@@ -24,6 +24,7 @@ items=(
   "rofi:.config/rofi"
   "alacritty:.config/alacritty"
   "wezterm:.config/wezterm"
+  "starship/starship.toml:.config/starship.toml"
   "nvim-mini:.config/nvim-mini"
   "fish:.config/fish"
   ".bashrc:.bashrc"

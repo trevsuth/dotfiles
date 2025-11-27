@@ -12,9 +12,19 @@ This repo centralizes my desktop configs (sway, waybar, rofi, alacritty, wezterm
 ```bash
 git clone git@github.com:<user>/dotfiles.git ~/Code/dotfiles
 cd ~/Code/dotfiles
+# Dry run to see actions:
+install/bootstrap.sh --dry-run
+# Link everything:
 install/bootstrap.sh
+# Link a subset:
+install/bootstrap.sh --only sway,waybar
 ```
 The script links each item into `~/.config/...` (and `.bashrc` into `$HOME`). If a target exists, it is moved to `~/.config/dotfiles-backups/<timestamp>/` before linking.
+
+## Packages to Install
+- Fedora: `install/install-fedora.sh`
+- Ubuntu: `install/install-ubuntu.sh` (WezTerm requires the upstream repo; see script note.)
+- macOS: `install/install-macos.sh` (skips Sway/Waybar; installs terminal tools and shells)
 
 ## Adding/Updating Configs
 1) Place the config inside this repo following the XDG-ish layout (e.g., add `kitty` as `kitty/` for `~/.config/kitty`).

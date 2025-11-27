@@ -16,8 +16,6 @@
   font-family: "IBM Plex Mono", "JetBrains Mono", monospace;
   font-size: 14px;
   color: @text;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
 }
 
 window#waybar {

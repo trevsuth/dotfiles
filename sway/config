@@ -12,7 +12,7 @@ set $mod Mod4
 exec mako
 
 # Import theme first so invidual modifications can be made
-include ~/.config/sway/themes/bebop_weight
+include ~/.config/sway/themes/expanse_hud
 
 ### Clipman
 #exec wl-paste -t text --watch clipman store

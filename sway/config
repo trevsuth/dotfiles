@@ -23,6 +23,9 @@ exec_always --no-startup-id pkill -x waybar || true
 # Import theme first so individual modifications can be made
 include ~/.config/sway/themes/expanse_hud
 
+# Wallpaper
+output * bg "$HOME/Pictures/Wallpapers/SolarSystem.jpg" fill
+
 ### Clipman
 #exec wl-paste -t text --watch clipman store
 #exec wl-paste -p -t text --watch clipman store --histpath='~/.local/share/clipman-primary.json'

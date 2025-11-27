@@ -1,0 +1,85 @@
+* {
+  border: none;
+  border-radius: 0px;
+  font-family: "Inconsolata";
+  font-size: 16px;
+  min-height: 0;
+  color: #a2bcc7; /* Sway Color 2 */
+}
+
+window#waybar {
+  border-bottom-style: inset;
+  border-bottom: 4px solid #a2bcc7; /* Sway Color 2 */
+  background: #080d11; /* Sway Color 1 */
+}
+
+#workspaces,
+#clock,
+#custom-music,
+#window {
+  font-weight: 800;
+}
+
+/* Workspace Buttons */
+#workspaces button label {
+  color: #080d11; /* Sway Color 1 */
+}
+
+#workspaces button.focused label {
+  color: #7c8183; /* Sway Color 5 */
+}
+#workspaces button.focused {
+  background: #a2bcc7; /* Sway Color 2 */
+}
+
+#mode {
+  background-color: #7c8183; /* Sway Color 5 */
+  color: white;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#tray,
+#mode,
+#idle_inhibitor {
+  padding: 0 5px;
+  margin: 0 10px;
+}
+
+#idle_inhibitor {
+  padding: 0 10px;
+}
+
+#idle_inhibitor.activated {
+  background-color: #a2bcc7; /* Sway Color 2 */
+  color: #080d11; /* Sway Color 1 */
+}
+
+#custom-music {
+  color: #b8bb26;
+  margin: 0 15px;
+  padding: 0 20px;
+  border-bottom: 4px solid #b8bb26;
+}
+
+#clock {
+  margin: 0;
+  color: #080d11;
+  background: #a2bcc7;
+  border-bottom: 4px solid #a2bcc7;
+}
+
+#network.disconnected {
+  color: #cc241d;
+  border-bottom: 4px solid #cc241d;
+}
+
+#pulseaudio.muted {
+  padding: 0 20px;
+  color: #cc241d;
+  border-bottom: 4px solid #cc241d;
+}

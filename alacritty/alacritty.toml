@@ -1,0 +1,27 @@
+general.import = [
+    "~/.config/alacritty/themes/themes/tokyo-night"
+]
+
+[terminal.shell]
+program = "tmux"
+
+[window]
+opacity = 0.8
+
+[font]
+
+[font.normal]
+family = "Fira Code"
+style = "Regular"
+
+[font.bold]
+family = "Fira Code"
+style = "Bold"
+
+[font.italic]
+family = "Fira Code"
+style = "Italic"
+
+[font.bold_italic]
+family = "Fira Code"
+style = "Bold Italic"

@@ -1,0 +1,81 @@
+* {
+    border: none;
+    border-radius: 0px;
+    font-family: "Inconsolata";
+    font-size: 16px;
+    min-height: 0;
+    color: #02A6E9;
+}
+
+window#waybar {
+    border-bottom-style: inset;
+    border-bottom: 4px solid #02A6E9;
+    background: #001E3F;
+}
+
+#workspaces, #clock, #custom-music, #window { 
+    font-weight: 800;
+}
+
+/* Workspace Buttons */
+#workspaces button label{
+    color: #02A6E9;
+}
+
+#workspaces button.focused label {
+    color: #02A6E9;
+
+}
+#workspaces button.focused {
+    background: #380F6A;
+    border-bottom: 4px solid #02A6E9 
+}
+
+#mode {
+    background-color: #02A6E9;
+    color: white;
+}
+
+#clock, #battery, #cpu, #memory, #network, #pulseaudio, #tray, #mode, #idle_inhibitor {
+    padding: 0 5px;
+    margin: 0 10px;
+}
+
+
+#idle_inhibitor {
+    padding: 0 10px;
+}
+
+#idle_inhibitor.activated {
+    background-color: #02A6E9;
+    color: #380F6A;
+}
+
+
+#custom-music {
+    color: #b8bb26;
+    margin: 0 15px;
+    padding: 0 20px;
+    border-bottom: 4px solid #b8bb26;
+
+}
+
+#clock {
+    margin: 0;
+    color: #252525;
+    background: #02A6E9;
+    border-bottom: 4px solid #02A6E9;
+}
+
+
+#network.disconnected {
+    color: #cc241d;
+    border-bottom: 4px solid #cc241d;
+}
+
+
+#pulseaudio.muted {
+    padding: 0 20px;
+    color: #02A6E9;
+    border-bottom: 4px solid #02A6E9;
+}

@@ -138,9 +138,20 @@ return {
 	default_prog = resolve_default_shell(),
 	font = wezterm.font_with_fallback(available_fonts(preferred_fonts)),
 	font_size = 11.0,
-	window_background_opacity = 0.9,
-	window_decorations = "RESIZE",
-	enable_tab_bar = false,
+	window_background_opacity = 0.5,
+	window_decorations = "INTEGRATED_BUTTONS|RESIZE",
+	integrated_title_button_style = "Gnome",
+	integrated_title_button_alignment = "Right",
+	integrated_title_buttons = { "Close", "Maximize", "Hide" },
+	integrated_title_button_color = palette.cyan,
+	window_frame = {
+		active_titlebar_bg = palette.panel,
+		inactive_titlebar_bg = palette.bg,
+		active_titlebar_fg = palette.text,
+		inactive_titlebar_fg = palette.muted,
+		border_top_height = "0.25cell",
+		border_top_color = palette.cyan,
+	},
 	color_schemes = {
 		["Expanse HUD"] = expanse_hud,
 	},
@@ -161,6 +172,7 @@ return {
 			}
 		end)(),
 	},
+	hide_tab_bar_if_only_one_tab = false,
 	use_fancy_tab_bar = true,
 	tab_bar_style = {
 		active_tab_left = wezterm.format({ { Foreground = { Color = palette.cyan } }, { Text = "" } }),

@@ -11,6 +11,15 @@ packages=(
   ripgrep
   fzf
   git
+  grim
+  slurp
+  wl-clipboard
+  libnotify
+  mako
+  swaylock
+  swayidle
+  playerctl
+  pulseaudio-utils
 )
 
 echo "Installing Fedora packages: ${packages[*]}"

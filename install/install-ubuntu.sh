@@ -10,6 +10,15 @@ packages=(
   ripgrep
   fzf
   git
+  grim
+  slurp
+  wl-clipboard
+  libnotify-bin
+  mako-notifier
+  swaylock
+  swayidle
+  playerctl
+  pulseaudio-utils
 )
 
 echo "Updating apt and installing: ${packages[*]}"

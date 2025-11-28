@@ -14,9 +14,6 @@ set $screenshot $scripts/screen.sh
 set $volume_script $scripts/volume
 set $cwd_script $scripts/cwd-term.sh
 
-# Thinner floating borders (no titlebar) to avoid gray bar on scratch/floating terms
-default_floating_border pixel 2
-
 ### Notification Service
 exec mako
 
@@ -309,3 +306,7 @@ for_window [app_id="pavucontrol"] floating enable
 exec $menu
 
 include /etc/sway/config.d/*
+
+# Enforce border style after any distro includes
+default_border pixel 2
+default_floating_border pixel 1

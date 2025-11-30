@@ -174,14 +174,6 @@ return {
 	},
 	hide_tab_bar_if_only_one_tab = false,
 	use_fancy_tab_bar = true,
-	tab_bar_style = {
-		active_tab_left = wezterm.format({ { Foreground = { Color = palette.cyan } }, { Text = "" } }),
-		active_tab_right = wezterm.format({ { Foreground = { Color = palette.cyan } }, { Text = "" } }),
-		inactive_tab_left = " ",
-		inactive_tab_right = " ",
-		new_tab_left = " ",
-		new_tab_right = " ",
-	},
 	keys = {
 		-- Align split highlights with theme accent.
 		{ key = "\\", mods = "ALT", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },

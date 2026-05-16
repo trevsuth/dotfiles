@@ -10,7 +10,7 @@ return {
     { "j-hui/fidget.nvim", opts = {} },
 
     -- Completion capabilities (blink.cmp)
-    "saghen/blink.cmp",
+    { "saghen/blink.cmp", version = "1.*" },
 
     -- Better Lua types for your config/plugins
     { "folke/lazydev.nvim", ft = "lua",

@@ -1,0 +1,2 @@
+WRN 2026-05-15T21:48:50.289 c/nvim-mini.25542.0 server_start:199: Failed to start server: operation not permitted: /run/user/1000/nvim-mini.2.0
+WRN 2026-05-15T21:50:30.135 c/nvim-mini.25542.0 server_start:199: Failed to start server: operation not permitted: /run/user/1000/nvim-mini.2.0

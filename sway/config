@@ -17,8 +17,8 @@ set $cwd_script $scripts/cwd-term.sh
 ### Notification Service
 exec mako
 
-# Ensure only one Waybar instance (systemd user services sometimes auto-start it)
-exec_always --no-startup-id pkill -x waybar || true
+# Waybar (restart on sway reload)
+exec_always --no-startup-id sh -c 'pkill -x waybar || true; if [ -f "$HOME/.cache/waybar.log" ]; then mv -f "$HOME/.cache/waybar.log" "$HOME/.cache/waybar.log.1"; fi; sleep 0.2; waybar >>"$HOME/.cache/waybar.log" 2>&1'
 
 # Import theme first so individual modifications can be made
 include ~/.config/sway/themes/expanse_hud
@@ -178,6 +178,8 @@ bindsym --locked XF86AudioPrev exec playerctl previous
 
     # reload the configuration file
     bindsym $mod+Shift+c reload
+    # restart Waybar
+    bindsym $mod+Shift+b exec --no-startup-id sh -c 'pkill -x waybar || true; sleep 0.2; waybar >>"$HOME/.cache/waybar.log" 2>&1'
 
 #
 # Moving around:
@@ -294,9 +296,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 
-bar {
-	swaybar_command waybar
-}
+
 
 # Custom Window Treatment
 for_window [app_id="org.clementine-player.clementine"] floating enable

@@ -92,12 +92,12 @@ end
 
 local preferred_shells = {
 	-- macOS Homebrew first, then common Linux paths, then POSIX fallbacks.
+	"/bin/bash",
 	"/opt/homebrew/bin/fish",
 	"/usr/local/bin/fish",
 	"/usr/bin/fish",
 	"/bin/fish",
 	"/bin/zsh",
-	"/bin/bash",
 }
 
 local function resolve_default_shell()

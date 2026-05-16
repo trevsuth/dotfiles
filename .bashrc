@@ -14,6 +14,9 @@ export PATH
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
+# set default nvim config file to use
+export NVIM_APPNAME=nvim-mini
+
 # User specific aliases and functions
 if [ -d ~/.bashrc.d ]; then
 	for rc in ~/.bashrc.d/*; do
@@ -42,7 +45,10 @@ alias bl='brightnessctl set'
 # make requirements file (python)
 alias mkreq='pip freeze > requirements.txt'
 
+
 unset rc
 . "$HOME/.cargo/env"
 
 . "$HOME/.local/bin/env"
+
+eval "$(starship init bash)"
